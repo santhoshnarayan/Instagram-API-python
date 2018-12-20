@@ -99,6 +99,22 @@ class InstagramAPI:
             'android_release': android_release
         }
     
+    def get_device_kwargs(self):
+        device_kwargs = {
+            "manufacturer"     : self.manufacturer,
+            "model"            : self.model,
+            "android_version"  : self.android_version,
+            "android_release"  : self.android_release,
+            "dpi"              : self.dpi,
+            "resolution"       : self.resolution,
+            "device"           : self.device,
+            "cpu"              : self.cpu,
+            "locale"           : self.locale,
+            "uuid"             : self.uuid,
+            "device_id"        : self.device_id,
+        }
+        return device_kwargs
+    
     def user_agent(self):
         return self.USER_AGENT.format(
             apk_version     = self.APK_VERSION,
